@@ -1,0 +1,1106 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+
+
+<html>
+
+<head>
+
+	<title>PulseParts.com Fax Orders</title>
+
+	<LINK REL=STYLESHEET type="text/css" HREF="sjgstyle.html">
+
+	
+
+	
+
+<SCRIPT LANGUAGE="JavaScript">
+
+// JavaScript price calculator
+
+
+
+function calc(form) {
+
+	
+
+	form.total_item_prices.value = form.part_price_01.value * 
+
+form.part_quantity_01.value + 
+
+								   
+
+form.part_price_02.value * form.part_quantity_02.value + 
+
+								   
+
+form.part_price_03.value * form.part_quantity_03.value + 
+
+								   
+
+form.part_price_04.value * form.part_quantity_04.value + 
+
+								   
+
+form.part_price_05.value * form.part_quantity_05.value + 
+
+								   
+
+form.part_price_06.value * form.part_quantity_06.value + 
+
+		   
+
+
+form.part_price_07.value * form.part_quantity_07.value;
+
+	
+
+	
+
+	if (form.salestax[0].checked == true)
+
+   {
+
+   form.total_item_salestax.value = form.total_item_prices.value * .0825;
+
+   }
+
+   else if (form.salestax[1].checked == true)
+
+   {
+
+   form.total_item_salestax.value = form.total_item_prices.value * .07;
+
+   }
+
+   else if (form.salestax[2].checked == true)
+
+   {
+
+   form.total_item_salestax.value = form.total_item_prices.value * 0.0;
+
+   }
+
+   
+
+   form.total_item_salestax.value = 
+
+parseInt(100.0*form.total_item_salestax.value) / 100.0;
+
+
+
+	
+
+	if (form.total_item_prices.value >= 1 && 
+
+form.total_item_prices.value <= 199)
+
+   {
+
+   form.total_order_shipping.value = 20.00;
+
+   }
+
+   if (form.total_item_prices.value >= 200 && form.total_item_prices.value 
+
+<= 399)
+
+   {
+
+   form.total_order_shipping.value = 35.00;
+
+   }
+
+   if (form.total_item_prices.value >= 400 && form.total_item_prices.value 
+
+<= 699)
+
+   {
+
+   form.total_order_shipping.value = 50.00;
+
+   }
+
+   if (form.total_item_prices.value >= 700)
+
+   {
+
+   form.total_order_shipping.value = "CALL";
+
+   }
+
+	
+
+  if (form.total_order_shipping.value == "CALL")
+
+	  form.total_order_cost.value = "CALL";
+
+	
+
+  else form.total_order_cost.value = 1.0 * form.total_item_prices.value + 
+
+1.0 * form.total_item_salestax.value + 1.0 * 
+
+form.total_order_shipping.value;
+
+	
+
+
+
+	
+
+	}
+
+	
+
+</script>
+
+</head>
+
+<FORM METHOD="POST"  ACTION="http://192.220.82.113/pulsefaxform.cgi">
+
+				
+
+<body BGCOLOR="black">
+
+
+
+<div align="center">
+
+<img src="pulselogosm.jpg" width="256" height="38"><BR>
+
+<TABLE CELLPADDING="0" CELLSPACING="0" WIDTH="600" HEIGHT="600" BORDER="0">
+
+	<TR>
+
+		<TD valign="top">
+
+		<DIV ALIGN="LEFT" CLASS="body">
+
+		<DIV ALIGN="CENTER">
+
+		<B>FAX ORDER FORM</B>
+
+		</DIV>
+
+		<br><br>
+
+	
+
+		Please fill in ALL requested information.  If the field 
+
+indicates "CALL", please call PulseParts.com to continue the order.
+		  If the items you need are  not listed below please call us and we will take your order by phone. <BR>
+		 <BR></DIV>
+
+		</td>
+
+	</tr>
+
+	<TR>
+
+		<TD>
+
+			<TABLE WIDTH="600" ALIGN="center" BORDER="0" 
+
+CELLPADDING="4" CELLSPACING="0">
+
+			<TR>
+
+				<TD>
+
+				<DIV ALIGN="LEFT" CLASS="BODY">
+
+				 <INPUT NAME="first_name" TYPE="text" 
+
+SIZE="35">
+
+				 <BR><B>First Name</B>
+
+				</DIV>
+
+				</TD>
+
+				<TD>
+
+				<DIV ALIGN="LEFT" CLASS="BODY">
+
+				 <INPUT NAME="last_name" TYPE="text" 
+
+SIZE="35">
+
+				 <BR><B>Last Name</B>
+
+				</DIV>
+
+				</TD>
+
+			</TR>
+
+			<TR>
+
+				<TD COLSPAN=2>
+
+				<DIV ALIGN="LEFT" CLASS="BODY">
+
+				 <INPUT NAME="company_name" TYPE="text" 
+
+SIZE="50">
+
+				 <BR><B>Company Name</B>
+
+				</DIV>
+
+				</TD>
+
+			</TR>
+
+			<TR>
+
+				<TD COLSPAN=2>
+
+				<DIV ALIGN="LEFT" CLASS="BODY">
+
+				 <INPUT NAME="email" TYPE="text" SIZE="30">
+
+				 <BR><B>Contact Email Address</B>
+
+				</DIV>
+
+				</TD>
+
+			</TR>
+
+			<TR> 
+
+				<TD>
+
+				<DIV ALIGN="LEFT" CLASS="BODY">
+
+				<INPUT NAME="phone" TYPE="text" SIZE="20">
+
+				<BR><B>Phone Number</B> 
+
+				</DIV>
+
+				</TD>
+
+				<TD>
+
+				<DIV ALIGN="LEFT" CLASS="BODY">
+
+				 <INPUT NAME="fax" TYPE="text" SIZE="20">
+
+				 <BR><B>Fax Number</B>
+
+				</DIV>
+
+				</TD>
+
+			</TR>
+
+			<TR>
+
+				<TD COLSPAN=2>
+
+				<DIV ALIGN="LEFT" CLASS="BODY">
+
+				 <B>Shipping Address (No P.O. Boxes):</B> 
+
+<BR><BR>
+
+				 <INPUT NAME="street_address_01" TYPE="text" 
+
+SIZE="60">
+
+				 <BR><B>Street Address Line 1</B>
+
+				</DIV>
+
+				</TD>
+
+			</TR>
+
+			<TR>
+
+				<TD COLSPAN=2>
+
+				<DIV ALIGN="LEFT" CLASS="BODY">
+
+				 <INPUT NAME="street_address_02" TYPE="text" 
+
+SIZE="60">
+
+				 <BR><B>Street Address Line 2</B>
+
+				</DIV>
+
+				</TD>
+
+			</TR>
+
+			
+
+			<TR>
+
+				<TD COLSPAN=2>
+
+				<DIV ALIGN="LEFT" CLASS="BODY">
+
+				 <INPUT NAME="city" TYPE="text" SIZE="35">
+
+				<BR><B>City</B> 
+
+				</DIV>
+
+				</TD>
+
+			</TR>
+
+			<TR> 
+
+				<TD>
+
+				<DIV ALIGN="LEFT" CLASS="BODY">
+
+				<INPUT NAME="state" TYPE="text" SIZE="4">
+
+				<BR><B>State</B> 
+
+				</DIV>
+
+				</TD>
+
+				<TD>
+
+				<DIV ALIGN="LEFT" CLASS="BODY">
+
+				 <INPUT NAME="zip" TYPE="text" SIZE="10">
+
+				 <BR><B>Zip</B>
+
+				 <BR><BR>
+
+				</DIV>
+
+				</TD>
+
+			</TR>
+
+			</TABLE>
+
+		</TD>
+
+	</TR>
+
+	
+
+	<TR>
+
+		<TD>
+
+			<TABLE WIDTH="600" HEIGHT="300" ALIGN="center" 
+
+BORDER="1" CELLPADDING="4" CELLSPACING="0">
+
+			<TR>
+
+				<TD COLSPAN="4">
+
+				<DIV ALIGN="CENTER" CLASS="BODY">
+
+				<B>PARTS REQUIRED</B>
+
+				</DIV>
+
+				</TD>
+
+			</TR>
+
+
+<TR>
+
+				<TD COLSPAN="4">
+
+				<DIV ALIGN="CENTER" CLASS="body">
+
+				<B>PULSE BOILERS</B>
+
+				</DIV>
+
+				</TD>
+
+			</TR>
+
+			<TR>
+
+				<TD>
+
+				<DIV ALIGN="LEFT" CLASS="BODY">
+
+				<B>PART NUMBER</B>
+
+				</DIV>
+
+				</TD>
+
+				
+
+				<TD>
+
+				<DIV ALIGN="LEFT" CLASS="BODY">
+
+				<B>ITEM DESCRIPTION</B>
+
+				</DIV>
+
+				</TD>
+
+				
+
+				<TD>
+
+				<DIV ALIGN="LEFT" CLASS="BODY">
+
+				<B>ITEM PRICE</B>
+
+				</DIV>
+
+				</TD>
+
+				
+
+				<TD>
+
+				<DIV ALIGN="LEFT" CLASS="BODY">
+
+				<B>QUANTITY</B>
+
+				</DIV>
+
+				</TD>
+
+			</TR>
+
+			
+
+			<TR>
+
+				<TD>
+
+				<DIV ALIGN="LEFT" CLASS="BODY">
+
+				<B>BM-7130</B>
+
+				<input name="part_number_01" type="Hidden" 
+
+value="BM-7130">
+
+				</DIV>
+
+				</TD>
+
+				
+
+				<TD>
+
+				<DIV ALIGN="LEFT" CLASS="BODY">
+
+				<B>REPLACEMENT BLOWER A50/100</B>
+
+				<input name="part_description_01" 
+
+type="Hidden" value="REPLACEMENT BLOWER A50/100">
+
+				</DIV>
+
+				</TD>
+
+				
+
+				<TD>
+
+				<DIV ALIGN="LEFT" CLASS="BODY">
+
+				
+				<B>$375.00 ea</B>
+
+				<input name="part_price_01" type="Hidden" value="375.00">
+
+				</DIV>
+
+				</TD>
+
+				
+
+				<TD>
+
+				<DIV ALIGN="LEFT" CLASS="BODY">
+
+				<B><INPUT NAME="part_quantity_01" 
+
+TYPE="text" SIZE="3" Value="0" ONCHANGE="calc(this.form)"></B>
+
+				</DIV>
+
+				</TD>
+
+			</TR>
+
+			
+
+			<TR>
+
+				<TD>
+
+				<DIV ALIGN="LEFT" CLASS="BODY">
+<B>BM-7131</B>
+
+				<input name="part_number_02" type="Hidden" value="BM-7131">
+
+				</DIV>
+
+				</TD>
+
+				
+
+				<TD>
+
+				<DIV ALIGN="LEFT" CLASS="BODY">
+
+				<B>REPLACEMENT BLOWER A100B/AM100</B>
+
+				<input name="part_description_02" type="Hidden" value="REPLACEMENT BLOWER A100B/AM100">
+				</DIV>
+
+				</TD>
+
+				
+
+				<TD>
+
+				<DIV ALIGN="LEFT" CLASS="BODY">
+
+				<B>$350.00 ea.</B>
+
+				<input name="part_price_02" type="Hidden" value="350.00">
+
+				</DIV>
+
+				</TD>
+
+				
+
+				<TD>
+
+				<DIV ALIGN="LEFT" CLASS="BODY">
+
+				<B><INPUT NAME="part_quantity_02" 
+
+TYPE="text" SIZE="3" Value="0" ONCHANGE="calc(this.form)"></B>
+
+				</DIV>
+
+				</TD>
+
+			</TR>
+
+			<TR>
+
+				<TD>
+
+				<DIV ALIGN="LEFT" CLASS="BODY">
+
+				<B>BM-7132</B>
+
+				<input name="part_number_03" type="Hidden" value="BM-7132">
+
+
+				</DIV>
+
+				</TD>
+
+				
+
+				<TD>
+
+				<DIV ALIGN="LEFT" CLASS="BODY">
+
+				<B>REPLACEMENT BLOWER A150/AM150</B>
+
+				<input name="part_description_03" type="Hidden" value="REPLACEMENT BLOWER A150/AM150">
+
+
+				</DIV>
+
+				</TD>
+
+				
+
+				<TD>
+
+				<DIV ALIGN="LEFT" CLASS="BODY">
+
+				<B>$450.00 ea.</B>
+
+				<input name="part_price_03" type="Hidden" value="450.00">
+
+
+				</DIV>
+
+				</TD>
+
+				
+
+				<TD>
+
+				<DIV ALIGN="LEFT" CLASS="BODY">
+
+				<B><INPUT NAME="part_quantity_03" 
+
+TYPE="text" SIZE="3" Value="0" ONCHANGE="calc(this.form)"></B>
+
+				</DIV>
+
+				</TD>
+
+			</TR>
+
+			
+
+			<TR>
+
+				<TD>
+
+				<DIV ALIGN="LEFT" CLASS="BODY">
+
+				<B>BM-7256</B>
+
+				<input name="part_number_04" type="Hidden" value="BM-7256">
+
+				</DIV>
+
+				</TD>
+
+				
+
+				<TD>
+
+				<DIV ALIGN="LEFT" CLASS="BODY">
+
+				
+				<B>REPLACEMENT IGNITION MODULE</B>
+
+				<input name="part_description_04" type="Hidden" value="REPLACEMENT IGNITION MODULE">
+
+				</DIV>
+
+				</TD>
+
+				
+
+				<TD>
+
+				<DIV ALIGN="LEFT" CLASS="BODY">
+
+				<B>$475.00 ea.</B>
+
+				<input name="part_price_04" type="Hidden" value="475.00">
+
+
+				</DIV>
+
+				</TD>
+
+				
+
+				<TD>
+
+				<DIV ALIGN="LEFT" CLASS="BODY">
+
+				<B><INPUT NAME="part_quantity_04" 
+
+TYPE="text" SIZE="3" Value="0" ONCHANGE="calc(this.form)"></B>
+
+				</DIV>
+
+				</TD>
+
+			</TR>
+
+			<TR>
+
+				<TD>
+
+				<DIV ALIGN="LEFT" CLASS="BODY">
+
+				<B>BM-8197</B>
+
+				<input name="part_number_05" type="Hidden" value="BM-8197">
+
+				</DIV>
+
+				</TD>
+
+				
+
+				<TD>
+
+				<DIV ALIGN="LEFT" CLASS="BODY">
+
+				<B>5 YEAR TUNE UP KIT 100</B>
+
+				<input name="part_description_05" type="Hidden" value="5 YEAR TUNE UP KIT 100">
+
+
+				</DIV>
+
+				</TD>
+
+				
+
+				<TD>
+
+				<DIV ALIGN="LEFT" CLASS="BODY">
+
+				
+				<B>$99.00 ea.</B>
+
+				<input name="part_price_05" type="Hidden" value="99.00">
+
+				</DIV>
+
+				</TD>
+
+				
+
+				<TD>
+
+				<DIV ALIGN="LEFT" CLASS="BODY">
+
+				<B><INPUT NAME="part_quantity_05" 
+
+TYPE="text" SIZE="3" Value="0" ONCHANGE="calc(this.form)"></B>
+
+				</DIV>
+
+				</TD>
+
+			</TR>
+
+			
+
+			<TR>
+
+				<TD>
+
+				<DIV ALIGN="LEFT" CLASS="BODY">
+
+				<B>BM-8198</B>
+
+				<input name="part_number_06" type="Hidden" value="BM-8198">
+
+				</DIV>
+
+				</TD>
+
+				
+
+				<TD>
+
+				<DIV ALIGN="LEFT" CLASS="BODY">
+
+				<B>5 YEAR TUNE UP KIT 150</B>
+
+				<input name="part_description_06" type="Hidden" value="5 YEAR TUNE UP KIT 150">
+
+				</DIV>
+
+				</TD>
+
+				
+
+				<TD>
+
+				<DIV ALIGN="LEFT" CLASS="BODY">
+
+				<B>$100.00 ea.</B>
+
+				<input name="part_price_06" type="Hidden" value="100.00">
+
+				</DIV>
+
+				</TD>
+
+				
+
+				<TD>
+
+				<DIV ALIGN="LEFT" CLASS="BODY">
+
+				
+				<B><INPUT NAME="part_quantity_06" TYPE="text" SIZE="3" Value="0" ONCHANGE="calc(this.form)"></B>
+
+
+				</DIV>
+
+				</TD>
+
+			</TR>
+
+			<TR>
+
+				<TD>
+
+				<DIV ALIGN="LEFT" CLASS="BODY">
+
+				<B>BM-8199</B>
+
+				<input name="part_number_07" type="Hidden" value="BM-8199">
+
+				</DIV>
+
+				</TD>
+
+				
+
+				<TD>
+
+				<DIV ALIGN="LEFT" CLASS="BODY">
+
+				<B>5 YEAR TUNE UP KIT 300</B>
+
+				<input name="part_description_07" type="Hidden" value="5 YEAR TUNE UP KIT 300">
+
+				</DIV>
+
+				</TD>
+
+				
+
+				<TD>
+
+				<DIV ALIGN="LEFT" CLASS="BODY">
+
+				<input name="part_price_07" type="Hidden" value="124.00">
+				<B>$124.00 ea.</B>
+				</DIV>
+
+				</TD>
+
+				
+
+				<TD>
+
+				<DIV ALIGN="LEFT" CLASS="BODY">
+
+				<B><INPUT NAME="part_quantity_07" 
+
+TYPE="text" SIZE="3" Value="0" ONCHANGE="calc(this.form)"></B>
+
+				</DIV>
+
+				</TD>
+
+			</TR>
+
+			</TABLE>
+
+		</TD>
+
+	
+
+	</TR>
+
+	<TR>
+
+		<TD>
+
+			<TABLE WIDTH="400" ALIGN="left" BORDER="0" 
+
+CELLPADDING="4" CELLSPACING="0">
+
+			<TR>
+
+				<TD>
+
+				<DIV ALIGN="LEFT" CLASS="BODY"><BR><BR>
+
+				 <B>Total Item Price</B> 
+
+				
+
+				</DIV>
+
+				</TD>
+
+				<TD>
+
+				<DIV ALIGN="LEFT" CLASS="BODY"><BR><BR>
+
+			    <INPUT NAME="total_item_prices" TYPE="text" 
+
+SIZE="10" ONCHANGE="calc(this.form)">
+
+				</DIV>
+
+				</TD>
+
+			</TR>
+
+			<TR>
+
+				<TD>
+
+				<DIV ALIGN="LEFT" CLASS="BODY">
+
+				 <B>Indicate state to calculate sales 
+
+tax</B> <BR>
+
+				 NY &nbsp;<INPUT TYPE="radio" 
+
+Name="salestax" VALUE="NY" ONCHANGE="calc(this.form)">
+
+				&nbsp;&nbsp;NJ&nbsp;<INPUT TYPE="radio" 
+
+Name="salestax" VALUE="NJ" ONCHANGE="calc(this.form)">
+
+				&nbsp;&nbsp;Other&nbsp;<INPUT TYPE="radio" 
+
+Name="salestax" VALUE="OTHER" CHECKED ONCHANGE="calc(this.form)">
+
+				</DIV>
+
+				</TD>
+
+				<TD>
+
+				<DIV ALIGN="LEFT" CLASS="BODY">
+
+			    <INPUT NAME="total_item_salestax" TYPE="text" 
+
+SIZE="10">
+
+				</DIV>
+
+				</TD>
+
+			</TR>
+
+			<TR>
+
+				<TD>
+
+				<DIV ALIGN="LEFT" CLASS="BODY">
+
+				 <B>Total Order Shipping and Handling</B> 
+
+				
+
+				</DIV>
+
+				</TD>
+
+				<TD>
+
+				<DIV ALIGN="LEFT" CLASS="BODY">
+
+			    <INPUT NAME="total_order_shipping" TYPE="text" 
+
+SIZE="10">
+
+				</DIV>
+
+				</TD>
+
+			</TR>
+
+			<TR>
+
+				<TD>
+
+				<DIV ALIGN="LEFT" CLASS="greenbody">
+
+				 <B>Total Cost of Order</B> 
+
+				
+
+				</DIV>
+
+				</TD>
+
+				<TD>
+
+				<DIV ALIGN="LEFT" CLASS="BODY">
+
+			    <INPUT NAME="total_order_cost" TYPE="text" 
+
+SIZE="10">
+
+				</DIV>
+
+				</TD>
+
+			</TR>
+
+		</TABLE>
+
+		</TD>
+
+	</TR>
+
+	<TR>
+
+		<td>
+
+		<BR><BR>
+
+		<div align="center" class="greensmall">
+
+		<INPUT TYPE="submit" VALUE="Submit">
+
+		<INPUT TYPE="reset" VALUE="Clear"></FORM>
+
+		<BR><BR>
+
+<B><A HREF="http://www.pulseparts.com/" class="greensmalllink">HOME</A> / 
+<A HREF="http://www.pulseparts.com/new.html" class="greensmalllink">WHAT'S NEW</A> / 
+<A HREF="http://www.pulseparts.com/pulseparts_list.html" class="greensmalllink">PARTS LIST</A> / 
+<A HREF="http://www.pulseparts.com/pulseparts_form.html" class="greensmalllink">ORDER BY FAX</A> / 
+<A HREF="http://www.pulseparts.com/phoneorder.html" class="greensmalllink">ORDER BY PHONE</A> / 
+<A HREF="http://www.pulseparts.com/faq.html" class="greensmalllink">FAQ</A> /
+<A HREF="http://www.pulseparts.com/links.html" class="greensmalllink">LINKS</A><BR>
+<A HREF="http://www.pulseparts.com/kn_boiler.html" class="greensmalllink">KN BOILER</A> /
+<A HREF="http://www.pulseparts.com/terms.html" class="greensmalllink">TERMS &amp; CONDITIONS</A> /
+<A HREF="http://www.pulseparts.com/downloads.html" class="greensmalllink">DOWNLOAD MANUALS &amp; PARTS LIST</A> /
+<A HREF="MAILTO:pulseparts@aol.com" class="greensmalllink">CONTACT</A>
+</B><BR><BR>
+
+
+		<img width="153" height="31" src="logostrip.gif"><BR><BR>
+
+
+
+		</DIV>
+
+ 
+
+
+
+	  </TD>
+
+	</TR>
+
+	
+
+</TABLE>
+
+
+
+</DIV>
+
+</body>
+
+</html>
+
